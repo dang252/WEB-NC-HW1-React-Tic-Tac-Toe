@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react'
+import { MouseEventHandler } from 'react'
 
 const Square = ({ value, onClickHandle, className }: { value: string, onClickHandle: MouseEventHandler<HTMLDivElement>, className?: string | null }) => {
     return (

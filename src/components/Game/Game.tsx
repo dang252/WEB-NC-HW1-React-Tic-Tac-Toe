@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Board from '../Board/Board'
 
 type move = { row: number, col: number }
@@ -31,7 +31,7 @@ const Game = () => {
         setAscending(!ascending)
     }
     console.log(movesDetails.current)
-    const moves = boardDataHistory.map((squares, move) => {
+    const moves = boardDataHistory.map((_squares, move) => {
         let description;
         if (move > 0) {
             description = 'Go to move #' + move + ", move #" + (move - 1) + `${movesDetails.current[move - 1] ? "(" + movesDetails.current[move - 1].row + ", " + movesDetails.current[move - 1].col + ")" : ""}`;
