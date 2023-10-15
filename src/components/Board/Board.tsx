@@ -1,4 +1,3 @@
-import React, { useRef, useState } from 'react'
 import Square from '../Square/Square'
 import uuid from 'react-uuid';
 
@@ -45,7 +44,12 @@ const Board = ({ width, height, boardData, isXNext, updateHistory }: { width: nu
     if (winnerSquares) {
         status = 'Winner: ' + boardData[winnerSquares[0]];
     } else {
-        if (!boardData.includes(null)) {
+        let isFull: boolean = true
+        for (let i = 0; i < 9; i++) {
+            if (boardData[i] != "X" && boardData[i] != "O")
+                isFull = false
+        }
+        if (isFull) {
             status = 'DRAW'
         }
         else {
